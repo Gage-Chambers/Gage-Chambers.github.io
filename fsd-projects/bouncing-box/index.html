@@ -8,7 +8,8 @@
       .box {
         width: 70px;
         height: 70px;
-        background-color: rgb(238, 14, 14)
+        background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6nwVIVCPmlOsiIwaYBCy7yhy2a-041M1vG9UepyClrsMoQ4IxclY-SHk:https://png.pngtree.com/png-vector/20220121/ourmid/pngtree-flying-seagull-png-image_4358106.png&s=10);
+        background-size:70px;
         font-size: 300%;
         text-align: center;
         user-select: none;
@@ -21,7 +22,9 @@
 
       .board {
         height: 100vh;
-        background-color: rgb(105, 13, 186);
+        background-image:  url(https://static.vecteezy.com/system/resources/thumbnails/049/089/009/small/tranquil-ocean-view-with-white-sand-beach-and-blue-sky-in-the-afternoon-free-photo.jpeg);
+        background-repeat:no-repeat;
+        background-size:cover;
       }
     </style>
     <!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
@@ -78,6 +81,7 @@
          var speed = 10;
          var positionY = 0;
          var speedY = 10;
+         var randNum = Math.random(0 - 0.9999) * 100;
         
 
          
@@ -118,13 +122,13 @@
          * - move the box to the left side of the screen.
          */
         function handleBoxClick() {
-        positionX = 0;
-        positionY = 0;
+        var randX = Math.random() * (boardWidth - 100);
+        var randY = Math.random()* (boardHeight - 100);
         changeBoxText(points);
-        points += 1;
-        speed = 2 * points + 1;
-
-
+        points += 0;
+        speed = 2 * points + 0;
+        positionX = randX;
+        positionY = randY;
         }
         function endGame() {
          clearInterval(interval);
